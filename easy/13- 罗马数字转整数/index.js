@@ -1,8 +1,4 @@
 /**
- * 将罗马数字转成数字
- */
-
-/**
  * @param {string} s
  * @return {number}
  */
@@ -35,8 +31,3 @@ var romanToInt = function (s) {
   }
   return ans;
 };
-
-
-console.log(romanToInt("MCMXCIV"))
-console.log(romanToInt("LVIII"))
-console.log(romanToInt("IX"))
