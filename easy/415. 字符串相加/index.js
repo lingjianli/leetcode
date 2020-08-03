@@ -5,21 +5,21 @@
  */
 var addStrings = function(num1, num2) {
   let isLong = num1.length > num2.length
-  let longNum = (isLong ? num1 : num2).split("").reverse(), 
-    shortNum = (isLong ? num2: num1).split("").reverse(),
+  let longNum = (isLong ? num1 : num2), 
+    shortNum = (isLong ? num2: num1),
     sumStr = "",
     temp = 0
-  for(let i = 0; i < longNum.length; i++) {
-    let longChar = Number(longNum[i]), shortChar = 0, tempSum = 0
-    if(i < shortNum.length) {
-      shortChar = Number(shortNum[i])
+  for(let i = longNum.length - 1, j = shortNum.length - 1; i >= 0 ; i--, j--) {
+    let longChar = Number(longNum.charAt(i)), shortChar = 0, tempSum = 0
+    if(j >= 0) {
+      shortChar = Number(shortNum.charAt(j))
     }
     tempSum = longChar + shortChar + temp
-    sumStr += String(tempSum % 10)
+    sumStr = String(tempSum % 10) + sumStr
     temp = tempSum > 9 ? 1 : 0
   }
-  temp > 0 && (sumStr += temp)
-  return sumStr.split("").reverse().join("")
+  temp > 0 && (sumStr = temp + sumStr)
+  return sumStr
 };
 
-console.log(addStrings('9', '99'))
+console.log(addStrings('133', '78331'))
