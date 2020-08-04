@@ -12,7 +12,7 @@
 给定二叉树 [3,9,20,null,null,15,7]
 
 ```mermaid
-graph TD;
+    graph TD;
     A((3));
     B((9));
     C((20));

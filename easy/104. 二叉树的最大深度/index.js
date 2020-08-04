@@ -21,6 +21,7 @@ var maxDepth = function(root) {
   return Math.max([left, right]) + 1
 };
 
+// 广度优先搜索
 var maxDepthByBfs = function(root) {
   if(root === null) return 0
   // 头节点进入队列
